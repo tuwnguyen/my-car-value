@@ -17,7 +17,7 @@ export function Serialize(dto: ClassContructor) {
 }
 
 export class SerializeInterceptor implements NestInterceptor {
-  constructor(private dto: any) {}
+  constructor(private dto: ClassContructor) {}
 
   intercept(
     context: ExecutionContext,
