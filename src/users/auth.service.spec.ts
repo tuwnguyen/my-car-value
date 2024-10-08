@@ -33,7 +33,7 @@ describe('AuthService', () => {
       ],
     }).compile();
 
-    authService = module.get(AuthService);
+    authService = module.get<AuthService>(AuthService);
   });
 
   it('can create an instance of auth service', async () => {
