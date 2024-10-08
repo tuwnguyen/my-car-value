@@ -10,12 +10,6 @@ async function bootstrap() {
       keys: ['dddddd'],
     }),
   );
-  app.useGlobalPipes(
-    new ValidationPipe({
-      // whitelist: true strip out all property in the body not in dto
-      whitelist: true,
-    }),
-  );
   await app.listen(3000);
 }
 bootstrap();
