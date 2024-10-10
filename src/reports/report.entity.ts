@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { User } from 'src/users/user.entity';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 
 @Entity()
 export class Report {
@@ -25,4 +26,11 @@ export class Report {
 
   @Column()
   mileage: number;
+
+  // first argument explaination:
+  // solve the circular dependency by wrapping User in a function, make sure User was defined before executing
+  // second argument:
+  // inverse side: indicate what property in the relationship
+  @ManyToOne(() => User, (user) => user.reports)
+  user: User;
 }
