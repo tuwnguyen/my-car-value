@@ -1,10 +1,4 @@
-import {
-  createParamDecorator,
-  ExecutionContext,
-  UseInterceptors,
-} from '@nestjs/common';
-import { CurrentUserInterceptor } from '../interceptors/current-user.interceptor';
-import { UsersService } from '../users.service';
+import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 
 export const CurrentUser = createParamDecorator(
   // no need data arg
